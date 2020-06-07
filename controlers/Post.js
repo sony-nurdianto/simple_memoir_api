@@ -7,8 +7,7 @@ module.exports = {
         Post.create({
             name : req.body.name,
             status : req.body.status
-        }).populate("name")
-        .populate({path : "like"})
+        })
         .then((response) => res.json(response))
         .catch((err) => status(400).json(err))
     },
@@ -27,6 +26,8 @@ module.exports = {
 
     getPost : (req,res) => {
         Post.find({})
+        .populate("name")
+        .populate({path : "like"})
         .then((response) => res.json(response))
         .catch((err) => status(400).json(err))
     },

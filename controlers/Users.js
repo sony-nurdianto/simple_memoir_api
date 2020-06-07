@@ -8,7 +8,7 @@ module.exports = {
             name : req.body.name,
             email : req.body.email
         }).then((response) => res.json(response))
-            .catch((err) =>  status(400).json(err))
+        .catch((err) =>  status(400).json(err))
     },
 
     getUser : (req,res) => {

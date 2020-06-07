@@ -11,7 +11,7 @@ var usersRouter = require('./routes/Users');
 var postRouter = require('./routes/Post')
 
 var app = express();
-mongoose.connect('mongodb://localhost/my_database', {   
+mongoose.connect('mongodb://localhost/simple-memoir', {   
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
