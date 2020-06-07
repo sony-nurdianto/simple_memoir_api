@@ -8,9 +8,10 @@ var cors = require("cors");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/Users');
+var postRouter = require('./routes/Post')
 
 var app = express();
-mongoose.connect('mongodb://localhost/my_database', {
+mongoose.connect('mongodb://localhost/my_database', {   
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -27,5 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/post',postRouter)
 
 module.exports = app;
